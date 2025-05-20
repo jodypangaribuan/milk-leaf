@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
 
-    // Add smooth scrolling for anchor links
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -33,6 +33,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Mobile menu toggle
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    if (navbarToggler && navbarCollapse) {
+        navbarToggler.addEventListener('click', function() {
+            navbarCollapse.classList.toggle('show');
+        });
+    }
+
+    // Add active class to current page in navigation
+    const currentLocation = location.pathname;
+    const menuItems = document.querySelectorAll('.navbar-nav a');
+    const menuLength = menuItems.length;
+    
+    for (let i = 0; i < menuLength; i++) {
+        if (menuItems[i].getAttribute('href') === currentLocation) {
+            menuItems[i].classList.add('active');
+        }
+    }
 
     // Navbar scroll behavior
     const navbar = document.getElementById('mainNav');

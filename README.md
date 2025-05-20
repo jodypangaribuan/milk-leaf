@@ -84,4 +84,43 @@ For the website to display correctly, you'll need to add these images to the `as
 
 ## License
 
-This project is licensed under the MIT License. 
+This project is licensed under the MIT License.
+
+## Gambar yang Dibutuhkan
+
+Untuk menampilkan website dengan benar, tambahkan gambar-gambar berikut ke folder `assets/images/`:
+
+1. `logo.png` - Logo Milk Leaf (kecil, untuk navbar)
+2. `hero-bg.jpg` - Gambar latar belakang untuk bagian hero (halaman utama)
+3. `nutrition1.jpg`, `nutrition2.jpg`, `nutrition3.jpg` - Gambar untuk bagian nutrisi (berbentuk lingkaran)
+4. `lactose.jpg` - Gambar untuk bagian intoleransi laktosa
+5. `avatar-placeholder.jpg` - Gambar placeholder untuk avatar testimonial
+
+**Catatan:** Untuk menggunakan tampilan yang persis sama dengan gambar contoh, ambil gambar dari desain tersebut atau gunakan gambar yang serupa.
+
+## Cara Menjalankan
+
+1. Siapkan database MySQL:
+   ```
+   mysql -u root -p
+   CREATE DATABASE milk_leaf_db;
+   exit;
+   ```
+
+2. Import struktur database:
+   ```
+   mysql -u root -p milk_leaf_db < database/milk_leaf_db.sql
+   ```
+
+3. Pastikan credentials database di `src/config/database.php` sudah benar (username, password, dll).
+
+4. Upload gambar yang dibutuhkan ke folder `assets/images/`.
+
+5. Jalankan web server PHP:
+   ```
+   php -S localhost:8000 -t public/
+   ```
+
+6. Buka browser dan akses `http://localhost:8000/`
+
+Jika menggunakan Apache/Nginx, konfigurasikan document root ke folder `public/`. 
