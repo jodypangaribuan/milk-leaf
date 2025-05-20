@@ -6,18 +6,17 @@ Website promosi untuk produk susu kambing "Milk Leaf".
 
 - `index.html` - File HTML utama
 - `assets/images/` - Folder untuk menyimpan gambar
+- `.github/workflows/` - Konfigurasi GitHub Actions untuk GitHub Pages
 
 ## Gambar yang Dibutuhkan
 
-Untuk menjalankan website dengan benar, tambahkan gambar-gambar berikut ke dalam folder `assets/images/`:
+Untuk menjalankan website dengan benar, pastikan semua gambar berikut sudah ada di folder `assets/images/`:
 
-1. `logo.jpeg` - Logo Milk Leaf (sudah ada)
-2. `milk-splash.png` - Background splash susu untuk hero section
-3. `nutrisi1.jpg`, `nutrisi2.jpg`, `nutrisi3.jpg` - Gambar untuk section kandungan nutrisi (ukuran sekitar 120x120px)
-4. `check-icon.png` - Icon centang untuk manfaat
-5. `digestive-icon.png` - Icon pencernaan untuk manfaat
-6. `lactose-alt.jpg` - Gambar untuk section alternatif laktosa
-7. `testimonial1.jpg` sampai `testimonial6.jpg` - Foto testimonial (ukuran sekitar 60x60px)
+1. `logo.png` - Logo Milk Leaf
+2. `carousel.png` - Gambar carousel
+3. `nutrition1.png`, `nutrition2.png`, `nutrition3.png` - Gambar untuk section kandungan nutrisi
+4. `lactose-alt.jpg` - Gambar untuk section alternatif laktosa
+5. `testimonial1.jpg` sampai `testimonial6.jpg` - Foto testimonial
 
 ## Teknologi yang Digunakan
 
@@ -25,10 +24,24 @@ Untuk menjalankan website dengan benar, tambahkan gambar-gambar berikut ke dalam
 - CSS3
 - Bootstrap 5
 - Font Awesome (untuk icon)
+- Bootstrap Icons
 
-## Cara Menjalankan
+## Cara Menjalankan Lokal
 
 Buka file `index.html` di browser web Anda untuk melihat website.
+
+## Cara Deploy ke GitHub Pages
+
+1. Fork repository ini ke akun GitHub Anda
+2. Pastikan repository Anda publik
+3. Pergi ke Settings > Pages
+4. Di bagian "Build and deployment", pilih "GitHub Actions" sebagai Source
+5. GitHub Actions akan otomatis men-deploy website Anda setiap kali ada perubahan di branch main
+
+## URL GitHub Pages
+
+Setelah di-deploy, website Anda akan tersedia di URL:
+`https://[username].github.io/milk-leaf/`
 
 ## Fitur
 
@@ -36,4 +49,4 @@ Buka file `index.html` di browser web Anda untuk melihat website.
 - Navigasi yang mudah
 - Informasi lengkap tentang produk susu kambing
 - Testimoni pelanggan
-- Footer dengan link sosial media 
+- Footer dengan link sosial media

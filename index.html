@@ -14,11 +14,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
     <style>
       :root {
         --primary-color: #20a0bd;
         --secondary-color: #fffcf3;
         --dark-text: #333333;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
@@ -74,14 +83,29 @@
         margin-bottom: 40px;
         font-weight: bold;
         color: var(--secondary-color);
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary-color);
+        border-radius: 3px;
       }
 
       .feature-section {
         background-color: var(--primary-color);
         color: #fffcf3;
-        padding: 50px 0 70px 0;
+        padding: 60px 0 80px 0;
         margin-top: 10px;
-        border-radius: 8px 8px 0 0;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
 
       .feature-card {
@@ -90,24 +114,32 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         min-height: 350px;
       }
 
       .feature-card img {
         width: 300px;
         height: 180px;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         object-fit: cover;
         background-color: white;
         padding: 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+      }
+
+      .feature-card:hover img {
+        transform: scale(1.03);
       }
 
       .benefits-section {
-        padding: 50px 0;
-        background-color: #f9f9f9;
-        border-radius: 8px;
-        margin-top: 20px;
+        padding: 60px 0;
+        background-color: white;
+        border-radius: 12px;
+        margin-top: 40px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f0f0f0;
       }
 
       .benefit-item {
@@ -128,14 +160,18 @@
       .alternative-section {
         background-color: var(--primary-color);
         color: #fffcf3;
-        padding: 50px 0;
-        border-radius: 8px;
-        margin-top: 20px;
+        padding: 60px 0;
+        border-radius: 12px;
+        margin-top: 40px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
 
       .comparison-section {
         padding: 60px 0;
         background-color: #f9f9f9;
+        border-radius: 12px;
+        margin-top: 40px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       }
 
       .comparison-table {
@@ -144,16 +180,26 @@
 
       .testimonial-section {
         padding: 60px 0;
+        border-radius: 12px;
+        margin-top: 40px;
+        background-color: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       }
 
       .testimonial-card {
         background-color: var(--primary-color);
-        border-radius: 15px;
-        padding: 20px;
+        border-radius: 16px;
+        padding: 25px;
         margin-bottom: 30px;
         color: #fffcf3;
         height: 100%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
       }
 
       .testimonial-img {
@@ -177,9 +223,10 @@
       footer {
         background-color: var(--primary-color);
         color: #fffcf3;
-        padding: 30px 0;
-        border-radius: 0 0 8px 8px;
-        margin-bottom: 20px;
+        padding: 40px 0 30px;
+        border-radius: 12px;
+        margin: 40px 0 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
 
       .footer-links {
@@ -271,39 +318,44 @@
           src="assets/images/carousel.png"
           class="img-fluid"
           alt="Milk Leaf Carousel Image"
-          style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)"
+          style="
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+          "
         />
       </div>
     </div>
-    <div style="height: 20px"></div>
+    <div style="height: 30px"></div>
 
     <!-- Nutrition Section -->
     <section class="feature-section">
       <div class="container">
-        <h2 class="section-title">Kandungan Nutrisi Dalam Susu Kambing</h2>
-        <div class="row">
-          <div class="col-md-4">
+        <h2 class="section-title text-center mb-5">
+          Kandungan Nutrisi Dalam Susu Kambing
+        </h2>
+        <div class="row justify-content-center">
+          <div class="col-md-3 mx-auto">
             <div class="feature-card">
               <img src="assets/images/nutrition1.png" alt="Nutrisi 1" />
-              <p>
+              <p class="text-center">
                 berperan penting dalam pembentukan hemoglobin, yaitu protein
                 dalam sel darah merah yang membawa oksigen ke seluruh tubuh.
               </p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3 mx-auto">
             <div class="feature-card">
               <img src="assets/images/nutrition2.png" alt="Nutrisi 2" />
-              <p>
+              <p class="text-center">
                 berfungsi membantu pembentukan dan pemeliharaan tulang serta
                 gigi yang kuat, bekerja bersama kalsium.
               </p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3 mx-auto">
             <div class="feature-card">
               <img src="assets/images/nutrition3.png" alt="Nutrisi 3" />
-              <p>
+              <p class="text-center">
                 bermanfaat untuk menjaga kesehatan tulang dan gigi, membantu
                 fungsi otot dan saraf, serta mendukung kerja jantung yang
                 optimal.
@@ -317,31 +369,96 @@
     <!-- Benefits Section -->
     <section class="benefits-section">
       <div class="container">
-        <h2 class="section-title">Manfaat Susu Kambing</h2>
-        <div class="row">
-          <div class="col-md-6">
-            <h4>Menjaga Kesehatan Tulang dan Gigi</h4>
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <img src="assets/images/check-icon.png" alt="Check" />
+        <h2
+          class="section-title text-center mb-5"
+          style="color: var(--dark-text)"
+        >
+          Manfaat Susu Kambing
+        </h2>
+
+        <div class="row align-items-center">
+          <!-- Menjaga Kesehatan Tulang dan Gigi -->
+          <div class="col-md-6 mb-4">
+            <div class="d-flex align-items-start">
+              <div
+                class="benefit-icon me-3"
+                style="font-size: 2.5rem; color: #888"
+              >
+                <i class="fas fa-bone text-primary"></i>
               </div>
-              <p>
-                Kaya akan kalsium dan fosfor yang membantu memperkuat tulang dan
-                mencegah osteoporosis.
-              </p>
+              <div>
+                <h4 class="fw-bold">Menjaga Kesehatan Tulang dan Gigi</h4>
+                <ul class="ps-3 mt-2">
+                  <li>
+                    Kaya akan kalsium dan fosfor yang membantu memperkuat tulang
+                    dan mencegah osteoporosis.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <h4>Mudah Dicerna</h4>
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <img src="assets/images/digestive-icon.png" alt="Digestive" />
+
+          <!-- Mencegah Anemia -->
+          <div class="col-md-6 mb-4">
+            <div class="d-flex align-items-start">
+              <div
+                class="benefit-icon me-3"
+                style="font-size: 2.5rem; color: #888"
+              >
+                <i class="bi bi-droplet-fill text-danger"></i>
               </div>
-              <p>
-                Susu kambing memiliki struktur lemak dan protein yang lebih
-                halus, menjadikannya lebih mudah dicerna sehingga susu sapi —
-                cocok untuk penderita intoleransi ringan.
-              </p>
+              <div>
+                <h4 class="fw-bold">Mencegah Anemia</h4>
+                <ul class="ps-3 mt-2">
+                  <li>
+                    Kandungan zat besi dalam susu kambing membantu pembentukan
+                    sel darah merah dan mencegah kekurangan darah.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mudah Dicerna -->
+          <div class="col-md-6 mb-4">
+            <div class="d-flex align-items-start">
+              <div
+                class="benefit-icon me-3"
+                style="font-size: 2.5rem; color: #888"
+              >
+                <i class="bi bi-hand-thumbs-up-fill text-warning"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold">Mudah Dicerna</h4>
+                <ul class="ps-3 mt-2">
+                  <li>
+                    Susu kambing memiliki struktur lemak dan protein yang lebih
+                    halus, sehingga lebih mudah dicerna dibanding susu sapi —
+                    cocok untuk penderita intoleransi ringan.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Menyehatkan Sistem Pencernaan -->
+          <div class="col-md-6 mb-4">
+            <div class="d-flex align-items-start">
+              <div
+                class="benefit-icon me-3"
+                style="font-size: 2.5rem; color: #888"
+              >
+                <i class="fas fa-dna text-info"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold">Menyehatkan Sistem Pencernaan</h4>
+                <ul class="ps-3 mt-2">
+                  <li>
+                    Memiliki asam lemak rantai sedang (MCT) dan pH yang mirip
+                    dengan ASI, sehingga mendukung kesehatan lambung dan usus.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -358,6 +475,12 @@
               src="assets/images/lactose-alt.jpg"
               alt="Alternatif Laktosa"
               class="img-fluid rounded"
+              style="
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                transition: transform 0.3s ease;
+              "
+              onmouseover="this.style.transform='scale(1.02)'"
+              onmouseout="this.style.transform='scale(1)'"
             />
           </div>
           <div class="col-lg-8">
