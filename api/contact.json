@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "message": "Pesan Anda telah berhasil dikirim! Kami akan menghubungi Anda segera.",
+  "data": {
+    "id": "msg-123456",
+    "timestamp": "2023-07-15T09:30:45.123Z"
+  }
+} 

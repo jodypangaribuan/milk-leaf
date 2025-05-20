@@ -1,0 +1,392 @@
+/* 
+* Milk Leaf - Custom Styles
+* A clean architecture CSS with organization by components
+*/
+
+/* ===== BASE STYLES ===== */
+:root {
+  --primary-color: #1abcce;
+  --secondary-color: #0f9bad;
+  --accent-color: #e8f7f9;
+  --dark-color: #333333;
+  --light-color: #f8f9fa;
+  --text-color: #4a4a4a;
+  --white-color: #ffffff;
+  --success-color: #28a745;
+  --font-family: 'Poppins', sans-serif;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+}
+
+a {
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* ===== UTILITY CLASSES ===== */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 50px;
+  background-color: var(--primary-color);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+.navbar {
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-brand span {
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-color) 100%), url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 80%;
+  background-image: url('../images/milk-splash.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.hero .badge {
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero .btn {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+}
+
+/* ===== BENEFITS SECTION ===== */
+.benefits {
+  background-color: var(--white-color);
+}
+
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.benefits .card {
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+}
+
+.benefits .card:hover {
+  transform: translateY(-10px);
+}
+
+.benefits .card-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ===== PRODUCTS SECTION ===== */
+.products .card {
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.products .card:hover {
+  transform: translateY(-10px);
+}
+
+.products .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.products .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.product-price {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== TESTIMONIALS SECTION ===== */
+.testimonials {
+  background-color: var(--white-color);
+}
+
+.testimonials .card {
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+}
+
+.testimonials .card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonials .card-text {
+  font-style: italic;
+  position: relative;
+}
+
+.testimonials .card-text::before {
+  content: '"';
+  font-size: 3rem;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  opacity: 0.1;
+  color: var(--primary-color);
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact {
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url('../images/milk-pattern.png');
+  background-size: 300px;
+  background-repeat: repeat;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.contact .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact .card {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.contact .form-control,
+.contact .form-select {
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.contact .form-control:focus,
+.contact .form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(26, 188, 206, 0.25);
+  border-color: var(--primary-color);
+}
+
+.contact .form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.contact .btn-primary {
+  padding: 0.75rem 2.5rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.contact .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Animation for form success message */
+.alert-success {
+  animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--dark-color);
+}
+
+footer a {
+  transition: var(--transition);
+}
+
+footer a:hover {
+  color: var(--primary-color) !important;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero::before {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero {
+    text-align: center;
+  }
+  
+  .hero::before {
+    right: 0;
+    width: 100%;
+    opacity: 0.3;
+  }
+  
+  .navbar-brand span {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+  
+  .hero .btn {
+    width: 100%;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-animation {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+} 
