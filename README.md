@@ -18,6 +18,14 @@ Untuk menjalankan website dengan benar, pastikan semua gambar berikut sudah ada 
 4. `lactose-alt.jpg` - Gambar untuk section alternatif laktosa
 5. `testimonial1.jpg` sampai `testimonial6.jpg` - Foto testimonial
 
+### Mengatasi Gambar yang Hilang
+
+Jika beberapa gambar testimonial atau lactose-alt.jpg tidak tersedia:
+
+1. Buka file `generate-placeholder.html` di browser
+2. Ikuti instruksi untuk membuat gambar placeholder
+3. Simpan gambar-gambar tersebut ke folder `assets/images/`
+
 ## Teknologi yang Digunakan
 
 - HTML5

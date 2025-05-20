@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generate Placeholder Images</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .placeholder {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+        margin: 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .instructions {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="instructions">
+      <h1>Placeholder Image Generator</h1>
+      <p>
+        Right-click each placeholder below and select "Save image as..." to save
+        them to your assets/images folder with the appropriate names:
+      </p>
+      <ul>
+        <li>testimonial1.jpg</li>
+        <li>testimonial2.jpg</li>
+        <li>testimonial3.jpg</li>
+        <li>testimonial4.jpg</li>
+        <li>testimonial5.jpg</li>
+        <li>testimonial6.jpg</li>
+        <li>lactose-alt.jpg</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>
+        Testimonial Images (Save as testimonial1.jpg through testimonial6.jpg)
+      </h2>
+      <div style="display: flex; flex-wrap: wrap">
+        <div class="placeholder">Testimonial 1</div>
+        <div class="placeholder">Testimonial 2</div>
+        <div class="placeholder">Testimonial 3</div>
+        <div class="placeholder">Testimonial 4</div>
+        <div class="placeholder">Testimonial 5</div>
+        <div class="placeholder">Testimonial 6</div>
+      </div>
+
+      <h2>Lactose Alternative Image (Save as lactose-alt.jpg)</h2>
+      <div class="placeholder" style="width: 200px; height: 150px">
+        Lactose Alt
+      </div>
+    </div>
+  </body>
+</html>
