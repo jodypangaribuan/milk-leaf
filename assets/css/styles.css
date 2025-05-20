@@ -203,6 +203,8 @@ a {
 .testimonials .card {
   transition: var(--transition);
   border-radius: var(--border-radius);
+  background-color: #1abcce;
+  color: #fff;
 }
 
 .testimonials .card:hover {
@@ -221,7 +223,26 @@ a {
   top: -20px;
   left: -10px;
   opacity: 0.1;
-  color: var(--primary-color);
+  color: #fff;
+}
+
+.rating {
+  margin-top: 0.25rem;
+}
+
+/* ===== COMPARISON SECTION ===== */
+.comparison-block {
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  background-color: #f8f9fa;
+  height: 100%;
+}
+
+.comparison-divider {
+  height: 150px;
+  width: 2px;
+  background-color: var(--primary-color);
+  margin: 0 auto;
 }
 
 /* ===== CONTACT SECTION ===== */
