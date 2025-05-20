@@ -1,76 +1,87 @@
-# Milk Leaf Website
+# MILK LEAF Website
 
-A clean, responsive website for Milk Leaf, a goat milk product company.
+A clean website for Milk Leaf, a goat milk product brand, built with PHP, MySQL, and Bootstrap.
 
 ## Project Structure
 
-The project follows a clean architecture for easy maintenance:
+The project follows a clean architecture pattern with MVC design:
 
 ```
 milk-leaf/
 ├── assets/
-│   ├── css/
-│   │   └── styles.css        # Main stylesheet with component-based organization
-│   ├── js/
-│   │   └── main.js           # JavaScript with modular pattern architecture
-│   └── images/               # Image assets directory
-├── index.html                # Main HTML file
-└── README.md                 # Project documentation
+│   ├── css/           # CSS files
+│   ├── js/            # JavaScript files
+│   └── images/        # Image files (add your own images)
+├── database/
+│   └── milk_leaf_db.sql  # Database setup script
+├── public/
+│   └── index.php      # Main entry point
+└── src/
+    ├── config/        # Configuration files
+    ├── controllers/   # Controller classes
+    ├── models/        # Model classes
+    └── views/         # View templates
 ```
 
-## Technologies Used
+## Requirements
 
-- HTML5 for semantic markup
-- CSS3 with custom properties and media queries for responsive design
-- JavaScript (ES6+) with module pattern for clean code organization
-- Bootstrap 5 for layout and components
-- Google Fonts (Poppins) for typography
+* PHP 7.4 or higher
+* MySQL 5.7 or higher
+* Web server (Apache/Nginx)
+* Composer (optional, for future dependencies)
 
-## Features
+## Installation
 
-- Responsive design for all device sizes
-- Clean component architecture for easy maintenance
-- Modular JavaScript using namespace pattern
-- Smooth animations and transitions
-- Cross-browser compatibility
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/milk-leaf.git
+   cd milk-leaf
+   ```
 
-## Getting Started
+2. Set up the database:
+   ```
+   mysql -u username -p < database/milk_leaf_db.sql
+   ```
 
-1. Clone this repository
-2. Open `index.html` in your browser to view the site locally
+3. Configure the database connection:
+   Edit `src/config/database.php` with your database credentials.
 
-## Development
+4. Set up your web server:
+   Configure your web server to point to the `public/` directory as the web root.
 
-For local development with hot reloading, you can use a local server:
+5. For Apache, create a `.htaccess` file in the `public/` directory:
+   ```
+   RewriteEngine On
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
+   ```
 
-```bash
-# If you have Python installed:
-python -m http.server
+6. Visit the website in your browser!
 
-# If you have Node.js installed:
-npx serve
-```
+## Usage
 
-## Browser Support
+- The main page shows information about Milk Leaf goat milk products
+- Navigation menu links to different sections of the website
+- The website showcases nutrition information, benefits, and comparisons
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+## Adding Images
 
-## Future Enhancements
+For the website to display correctly, you'll need to add these images to the `assets/images/` directory:
 
-- Add contact form functionality
-- Implement product details pages
-- Add shopping cart functionality
-- Integrate with a CMS for content management
+1. `logo.png` - The Milk Leaf brand logo
+2. `milk-splash.png` - Background milk splash image
+3. `leaves.png` - Decorative leaves image
+4. `nutrition1.jpg`, `nutrition2.jpg`, `nutrition3.jpg` - Nutrition section images
+5. `lactose.jpg` - Image for lactose intolerance section
+6. `avatar-placeholder.jpg` - Placeholder for testimonial avatars
 
-## Maintainability
+## Customization
 
-This project is designed for easy maintenance with:
+- Edit `src/models/ContentModel.php` to modify website content
+- Update styles in `assets/css/style.css`
+- Modify the database structure in `database/milk_leaf_db.sql`
 
-1. **Component-Based CSS**: Styles are organized by component
-2. **CSS Variables**: Central color and style management
-3. **JavaScript Modules**: Clean code organization with the module pattern
-4. **Responsive Utilities**: Mobile-first approach for all screen sizes
-5. **Semantic HTML**: Clear structure with semantic elements 
+## License
+
+This project is licensed under the MIT License. 

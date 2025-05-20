@@ -1,0 +1,149 @@
+/* Custom Styles for Milk Leaf Website */
+
+:root {
+    --primary: #30BFBF;
+    --primary-dark: #1D9D9D;
+    --primary-light: #7FE4E4;
+    --secondary: #6c757d;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+/* Bootstrap Overrides */
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.bg-primary-light {
+    background-color: var(--primary-light) !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 500px;
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+.milk-splash {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/milk-splash.png') no-repeat;
+    background-size: cover;
+    background-position: right center;
+    z-index: 0;
+}
+
+.leaves {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/leaves.png') no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+.z-index-1 {
+    z-index: 1;
+    position: relative;
+}
+
+/* Card Styles */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.bg-primary-light {
+    background-color: rgba(48, 191, 191, 0.2);
+}
+
+/* Nutrition Cards */
+.nutrition .card {
+    border-radius: 15px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.nutrition .card img {
+    border: 5px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Benefits Icons */
+.benefits-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    border-radius: 15px;
+}
+
+.testimonial-card .avatar img {
+    border: 2px solid white;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary);
+}
+
+footer a:hover {
+    text-decoration: underline !important;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 400px;
+    }
+    
+    .milk-splash {
+        opacity: 0.5;
+    }
+    
+    .leaves {
+        opacity: 0.4;
+    }
+} 
