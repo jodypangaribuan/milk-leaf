@@ -40,16 +40,31 @@ Buka file `index.html` di browser web Anda untuk melihat website.
 
 ## Cara Deploy ke GitHub Pages
 
-1. Fork repository ini ke akun GitHub Anda
-2. Pastikan repository Anda publik
-3. Pergi ke Settings > Pages
-4. Di bagian "Build and deployment", pilih "GitHub Actions" sebagai Source
-5. GitHub Actions akan otomatis men-deploy website Anda setiap kali ada perubahan di branch main
+1. Buat repository baru di GitHub (pastikan repositorynya publik)
+2. Push kode ini ke repository tersebut
+3. Di halaman repository GitHub Anda, klik pada tab "Settings"
+4. Scroll ke bawah, cari bagian "GitHub Pages" di sidebar kiri
+5. Di bagian "Source", pilih "GitHub Actions"
+6. Kembali ke tab "Actions" di repository Anda
+7. Jika workflow tidak berjalan otomatis, klik tombol "Run workflow" pada workflow "Deploy static content to Pages"
+8. Tunggu hingga workflow selesai (tanda centang hijau)
+9. Kembali ke Settings > Pages untuk melihat URL website yang sudah di-deploy
+
+### Troubleshooting Deployment
+
+Jika terjadi error saat deployment:
+
+1. Pastikan repository Anda berstatus publik (bukan private)
+2. Pastikan branch utama bernama "main" (bukan "master" atau lainnya)
+3. Pastikan GitHub Pages sudah diaktifkan di repository settings
+4. Jika masih terjadi error, coba ubah workflow secara manual:
+   - Buka file `.github/workflows/static.yml`
+   - Pastikan parameter `enablement: true` ada pada step "Setup Pages"
 
 ## URL GitHub Pages
 
 Setelah di-deploy, website Anda akan tersedia di URL:
-`https://[username].github.io/milk-leaf/`
+`https://[username].github.io/[repo-name]/`
 
 ## Fitur
 
