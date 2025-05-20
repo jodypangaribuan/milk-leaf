@@ -5,13 +5,13 @@ Website promosi untuk produk susu kambing "Milk Leaf".
 ## Struktur Folder
 
 - `index.html` - File HTML utama
-- `images/` - Folder untuk menyimpan gambar
+- `assets/images/` - Folder untuk menyimpan gambar
 
 ## Gambar yang Dibutuhkan
 
-Untuk menjalankan website dengan benar, tambahkan gambar-gambar berikut ke dalam folder `images/`:
+Untuk menjalankan website dengan benar, tambahkan gambar-gambar berikut ke dalam folder `assets/images/`:
 
-1. `logo.png` - Logo Milk Leaf (ukuran sekitar 40px tinggi)
+1. `logo.jpeg` - Logo Milk Leaf (sudah ada)
 2. `milk-splash.png` - Background splash susu untuk hero section
 3. `nutrisi1.jpg`, `nutrisi2.jpg`, `nutrisi3.jpg` - Gambar untuk section kandungan nutrisi (ukuran sekitar 120x120px)
 4. `check-icon.png` - Icon centang untuk manfaat
