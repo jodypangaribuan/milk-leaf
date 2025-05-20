@@ -46,17 +46,31 @@ Buka file `index.html` di browser web Anda untuk melihat website.
 4. Scroll ke bawah, cari bagian "GitHub Pages" di sidebar kiri
 5. Di bagian "Source", pilih "GitHub Actions"
 6. Kembali ke tab "Actions" di repository Anda
-7. Pilih workflow "Deploy to GitHub Pages" (atau "Deploy static content to Pages")
+7. Pilih workflow "Manual GitHub Pages Deploy" (workflow terbaru)
 8. Klik tombol "Run workflow" pada workflow yang dipilih
 9. Tunggu hingga workflow selesai (tanda centang hijau)
 10. Kembali ke Settings > Pages untuk melihat URL website yang sudah di-deploy
 
+### Mengatasi Error "Resource not accessible by integration"
+
+Jika Anda mengalami error "Resource not accessible by integration", ikuti langkah-langkah ini:
+
+1. Pastikan repository Anda berstatus publik (bukan private)
+2. Di halaman repository GitHub, klik Settings > Pages
+3. Di bagian "Build and deployment":
+   - Source: pilih "Deploy from a branch"
+   - Branch: pilih "gh-pages" (jika belum ada, buat terlebih dahulu dengan menjalankan workflow)
+4. Klik "Save"
+5. Kemudian kembali ke tab "Actions" dan jalankan workflow "Manual GitHub Pages Deploy"
+6. Ini akan memaksa membuat branch gh-pages yang kemudian bisa digunakan untuk GitHub Pages
+
 ### Catatan Tentang Workflow
 
-Repository ini memiliki dua file workflow yang dapat digunakan:
+Repository ini memiliki tiga file workflow yang dapat digunakan:
 
-- `.github/workflows/static.yml` - Workflow utama dengan konfigurasi manual
+- `.github/workflows/static.yml` - Workflow standar GitHub Pages
 - `.github/workflows/pages.yml` - Workflow alternatif yang lebih sederhana
+- `.github/workflows/manual-deploy.yml` - Workflow manual yang menggunakan pendekatan berbeda (pilihan terbaik untuk mengatasi error)
 
 Jika satu workflow tidak berfungsi, coba gunakan workflow yang lain dengan klik pada tab "Actions" dan memilih workflow yang berbeda.
 
@@ -73,16 +87,6 @@ Jika masih ada error "Resource not accessible by integration":
 7. Klik "New repository secret"
 8. Tambahkan secret dengan nama `PAT_GITHUB_TOKEN` dan paste token Anda
 9. Edit file `.github/workflows/static.yml` dan ganti `secrets.GITHUB_TOKEN` dengan `secrets.PAT_GITHUB_TOKEN`
-
-### Troubleshooting Deployment
-
-Jika terjadi error saat deployment:
-
-1. Pastikan repository Anda berstatus publik (bukan private)
-2. Pastikan branch utama bernama "main" (bukan "master" atau lainnya)
-3. Pastikan GitHub Pages sudah diaktifkan di repository settings
-4. Coba aktifkan GitHub Pages secara manual di Settings > Pages, pilih branch "gh-pages" (akan dibuat oleh workflow)
-5. Jika masih terjadi error, baca pesan error di tab Actions untuk informasi lebih lanjut
 
 ## URL GitHub Pages
 
